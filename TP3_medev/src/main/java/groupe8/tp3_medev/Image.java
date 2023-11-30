@@ -27,9 +27,17 @@ public class Image {
     private String filepath;
     private String commentaire;
     
-
+    /**
+     *
+     * @param hauteur
+     * @param largeur
+     * @param max
+     * @param pixels
+     * @param filepath
+     * @param commentaire
+     */
     public Image(int hauteur, int largeur, int max, int[][] pixels, String filepath,String commentaire) {
-		this.filepath=filepath;
+        this.filepath=filepath;
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.max = max;
@@ -37,69 +45,129 @@ public class Image {
         this.commentaire=commentaire;
     }
     
+    /**
+     *
+     * @param filepath
+     */
+    public Image(String filepath) {
+        this.filepath=filepath;
+        this.hauteur = 0;
+        this.largeur = 0;
+        this.max = 255; 
+        this.commentaire="";
+    }
+    
+    /**
+     *
+     * @param im
+     */
     public Image(Image im){
         this.hauteur = im.hauteur;
         this.largeur = im.largeur;
         this.max = im.max;
         
         this.pixels = new int[largeur][hauteur];
-        this.filepath=filepath;
+        this.filepath=im.filepath;
         this.commentaire=im.commentaire;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getHauteur() {
         return hauteur;
     }
 
+    /**
+     *
+     * @param hauteur
+     */
     public void setHauteur(int hauteur) {
         this.hauteur = hauteur;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLargeur() {
         return largeur;
     }
 
+    /**
+     *
+     * @param largeur
+     */
     public void setLargeur(int largeur) {
         this.largeur = largeur;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getMax() {
         return max;
     }
 
+    /**
+     *
+     * @param max
+     */
     public void setMax(int max) {
         this.max = max;
     }
 
-    
+    /**
+     *
+     * @return
+     */
     public int[][] getPixels() {
         return pixels;
     }
 
-  
+    /**
+     *
+     * @param pixels
+     */
     public void setPixels(int[][] pixels) {
         this.pixels = pixels;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFilepath() {
         return filepath;
     }
 
+    /**
+     *
+     * @param filepath
+     */
     public void setFilepath(String filepath) {
         this.filepath = filepath;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCommentaire() {
         return commentaire;
     }
 
+    /**
+     *
+     * @param commentaire
+     */
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
     
-    
-    public void read(){
-        
+  
     
     public void read(){
         try {

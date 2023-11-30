@@ -11,6 +11,6 @@ package groupe8.tp3_medev;
 public class TP3_medev {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Image baboin = new Image("ImagesTestPGM\\baboon.pgm");
     }
 }
