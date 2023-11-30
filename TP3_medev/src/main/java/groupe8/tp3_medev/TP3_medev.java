@@ -5,6 +5,7 @@
 package groupe8.tp3_medev;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  *
