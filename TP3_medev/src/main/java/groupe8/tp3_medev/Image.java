@@ -96,10 +96,7 @@ public class Image {
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
-    
-    
-    public void read(){
-        
+       
     
     public void read(){
         try {
