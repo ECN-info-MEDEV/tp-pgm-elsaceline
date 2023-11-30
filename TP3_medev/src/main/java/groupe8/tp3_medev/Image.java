@@ -4,6 +4,9 @@
  */
 package groupe8.tp3_medev;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Array;
 import java.util.ArrayList;
 
@@ -74,7 +77,22 @@ public class Image {
     }
     
     
-    public static void read(){
+    public void read(){
+        
+    }
+    
+    public void write() throws IOException{
+        
+        PrintWriter writer=new PrintWriter(new FileWriter(this.filepath));
+        writer.println("P2");
+        writer.println(this.largeur+" "+this.hauteur);
+        writer.println(this.max);
+        for (int i=0;i<this.largeur;i++){
+            for (int j=0; j<this.hauteur;j++){
+                writer.println(this.pixels[i][j]+" ");
+            }
+            writer.println();
+        }
         
     }
     
