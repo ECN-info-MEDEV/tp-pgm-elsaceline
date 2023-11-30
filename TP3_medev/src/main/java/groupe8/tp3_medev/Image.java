@@ -139,19 +139,26 @@ public class Image {
     }
     
     public void write() throws IOException{
-        
+        int compteligne=0;
         PrintWriter writer=new PrintWriter(new FileWriter(this.filepath));
         writer.println("P2");
+        writer.println(this.commentaire);
         writer.println(this.largeur+" "+this.hauteur);
         writer.println(this.max);
         for (int i=0;i<this.largeur;i++){
             for (int j=0; j<this.hauteur;j++){
-                writer.println(this.pixels[i][j]+" ");
+                compteligne+=1;
+                if (compteligne<70){
+                    writer.write(this.pixels[i][j]+" ");
             }
-            writer.println();
+                else {
+                    compteligne=0;
+                    writer.println(this.pixels[i][j]+" ");
+                }
         }
         
     }
     
     
+}
 }
