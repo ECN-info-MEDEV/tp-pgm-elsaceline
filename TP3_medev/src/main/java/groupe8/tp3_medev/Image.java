@@ -15,10 +15,10 @@ public class Image {
     private int hauteur ;
     private int largeur;
     private int max;
-    private ArrayList pixels ;
+    private int[][] pixels ;
     private String filepath;
 
-    public Image(int hauteur, int largeur, int max, ArrayList pixels) {
+    public Image(int hauteur, int largeur, int max, int[][] pixels, String filepath) {
         this.hauteur = hauteur;
         this.largeur = largeur;
         this.max = max;
@@ -29,7 +29,8 @@ public class Image {
         this.hauteur = im.hauteur;
         this.largeur = im.largeur;
         this.max = im.max;
-        this.pixels = new ArrayList(im.pixels);
+        this.pixels = new int[largeur][hauteur];
+        this.filepath=filepath;
     }
     
     public int getHauteur() {
@@ -56,13 +57,22 @@ public class Image {
         this.max = max;
     }
 
-    public ArrayList getPixels() {
+    public int[][] getPixels() {
         return pixels;
     }
 
-    public void setPixels(ArrayList pixels) {
+    public void setPixels(int[][] pixels) {
         this.pixels = pixels;
     }
+
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+    
     
     public static void read(){
         
