@@ -16,6 +16,7 @@ public class Image {
     private int largeur;
     private int max;
     private ArrayList pixels ;
+    private String filepath;
 
     public Image(int hauteur, int largeur, int max, ArrayList pixels) {
         this.hauteur = hauteur;
@@ -61,6 +62,10 @@ public class Image {
 
     public void setPixels(ArrayList pixels) {
         this.pixels = pixels;
+    }
+    
+    public static void read(){
+        
     }
     
     
