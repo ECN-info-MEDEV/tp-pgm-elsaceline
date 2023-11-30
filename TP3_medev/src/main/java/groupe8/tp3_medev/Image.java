@@ -176,7 +176,7 @@ public class Image {
             
             // Lecture de l'en-tête du fichier PGM
             String magicNumber = br.readLine();
-            if (!magicNumber.equals("P2") && !magicNumber.equals("P5")) {
+            if (!magicNumber.equals("P2")) {
                 System.err.println("Ce n'est pas un fichier PGM valide.");
                 br.close();
                 return;
@@ -187,25 +187,41 @@ public class Image {
             max = parseInt(br.readLine()); // Lire la valeur maximale
             
             // Traiter les dimensions et la valeur maximale si nécessaire
-            String delimiteur=" ";
+            String delimiteur="  ";
             StringTokenizer tokenizer=new StringTokenizer(dimensions,delimiteur);
             largeur=parseInt(tokenizer.nextToken());
             hauteur=parseInt(tokenizer.nextToken());
-
+            pixels= new int[largeur][hauteur];
             // Lecture des données de pixel
             String line = br.readLine();
+            int i=0;
+            int j=0;
             while (line != null) {
                 StringTokenizer tokenizer2=new StringTokenizer(line,delimiteur);
-                int j=0;
-                for (int i = 0; i < largeur; i++) {
-                    pixels[j][i]=parseInt(tokenizer2.nextToken());
+                
+                while(tokenizer2.hasMoreTokens()){
+                    String pixelString=tokenizer2.nextToken();
+                    int pixel=parseInt(pixelString);
+                    pixels[i][j]=pixel;
+                    j++;
+                    if (j==largeur) {
+                        i+=1;
+                        j=0;
+                    }
+                    
                 }
-                j++;
+                line = br.readLine();
+                
+//                int j=0;
+//                for (int i = 0; i < largeur; i++) {
+//                    pixels[j][i]=parseInt(tokenizer2.nextToken());
+//                }
+//                j++;
             }
             
             br.close(); // Fermer le fichier après lecture
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("e");
         }
     
     }

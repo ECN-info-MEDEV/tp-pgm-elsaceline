@@ -12,6 +12,7 @@ import java.io.IOException;
  */
 public class TP3_medev {
 
+
     public static void main(String[] args) throws IOException {
         System.out.println("Hello World!");
         //test write
@@ -35,6 +36,9 @@ public class TP3_medev {
         //test diff
         test2.difference(test1);
         //test read
-        Image baboin = new Image("ImagesTestPGM\\baboon.pgm");
+        Image baboin = new Image("C:\\Users\\elsaa\\Documents\\Centrale\\INFOSI\\MEDEV\\TP2\\tp-pgm-elsaceline\\ImagesTestPGM\\baboon.pgm");
+        
+        baboin.read();
+        System.out.println("Pixels = " + Arrays.toString(baboin.getPixels()));
     }
 }
